@@ -13,4 +13,4 @@ docker compose -f db.yml up -d
 ```bash
 npx prisma generate
 npx prisma push
-```
+````
