@@ -12,7 +12,7 @@ docker compose -f db.yml up -d
 ### First time
 ```bash
 npx prisma generate
-npx prisma push
+npx prisma db push
 ````
 
 ## Operation
