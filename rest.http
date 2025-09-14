@@ -1,5 +1,20 @@
-#REST API 
-
-##Get All Profiles
-
+### ดู profile ทั้งหมด
 GET http://localhost:3000/profile
+Accept: application/json
+
+###
+
+GET http://localhost:3000/profile/a7f78f9c-c9ec-4757-a320-3dffd0b10670
+Accept: application/json
+
+###
+
+POST http://localhost:3000/profile
+Content-Type: application/json
+
+{
+  "username": "student03",
+  "password": "securepass03",
+  "mobile": "0812345679",
+  "cardId": "998877665545"
+}
