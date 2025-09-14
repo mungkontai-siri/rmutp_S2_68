@@ -17,14 +17,14 @@ Content-Type: application/json
 }
 
 ### Get some profile by id
-GET http://localhost:3000/profile/a7f78f9c-c9ec-4757-a320-3dffd0b10670
+GET http://localhost:3000/profile/2b790e4e-9b41-46ee-8a11-a7ae866f0593
 
 ### Login
 POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "username": "demo5",
+    "username": "demo7",
     "password": "1234"
 }
 
@@ -33,13 +33,13 @@ POST http://localhost:3000/encode
 Content-Type: application/json
 
 {
-  "text": "hello world"
+    "username": "demo11",
+    "password": "789456321",
+    "mobile": "099955550",
+    "cardId": "1211100908076"
 }
 
 ### Decode
-POST http://localhost:3000/decode
+GET http://localhost:3000/decode/873c0731-cfae-4e4d-a918-d87d652f43f9
 Content-Type: application/json
 
-{
-  "encoded": "aGVsbG8gd29ybGQ="
-}
