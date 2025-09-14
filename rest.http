@@ -1,20 +1,29 @@
-### ดู profile ทั้งหมด
+# REST API
+
+### Get All Profiles
+### curl http://localhost:3000/profile
 GET http://localhost:3000/profile
-Accept: application/json
 
-###
-
-GET http://localhost:3000/profile/a7f78f9c-c9ec-4757-a320-3dffd0b10670
-Accept: application/json
-
-###
-
+### Create New Profile
+### curl -X POST http://localhost:3000/profile
 POST http://localhost:3000/profile
 Content-Type: application/json
 
 {
-  "username": "student03",
-  "password": "securepass03",
-  "mobile": "0812345679",
-  "cardId": "998877665545"
+    "username": "demo7",
+    "password": "1234",
+    "mobile": "0999999912",
+    "cardId": "1234567890123"
+}
+
+### Get some profile by id
+GET http://localhost:3000/profile/7645b518-749d-4c18-a2e3-93eb3a8d3a49xyz
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "demo1",
+    "password": "demo1"
 }
