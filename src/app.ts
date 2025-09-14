@@ -111,16 +111,45 @@ app.post("/login", async (c) => {
     });
 });
 app.post("/encode", async (c) => {
-    return c.json({
-        message: "encode completed",
-        func: encode(),
-    });
+  const body = await c.req.json();
+  const { text } = body;
+
+  if (!text) {
+    return c.json({ message: "Missing 'text' field" }, 400);
+  }
+
+  const result = encode(text);
+
+  return c.json({
+    message: "encode completed",
+    original: text,
+    encoded: result,
+  }, 201);
 });
+
+app.post("/encode", async (c) => {
+  const body = await c.req.json();
+  const { text } = body;
+
+  if (!text) return c.json({ message: "Missing 'text'" }, 400);
+
+  const result = encode(text);
+  return c.json({ message: "encode completed", encoded: result });
+});
+
 app.post("/decode", async (c) => {
-    return c.json({
-        message: "decode completed",
-        func: decode(),
-    });
+  const body = await c.req.json();
+  const { encoded } = body;
+
+  if (!encoded) return c.json({ message: "Missing 'encoded'" }, 400);
+
+  try {
+    const result = decode(encoded);
+    return c.json({ message: "decode completed", decoded: result });
+  } catch (err) {
+    return c.json({ message: "Decode failed", error: err.message }, 500);
+  }
 });
+
 
 export default app;

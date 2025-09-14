@@ -30,6 +30,16 @@ Content-Type: application/json
 
 ### Encode
 POST http://localhost:3000/encode
+Content-Type: application/json
+
+{
+  "text": "hello world"
+}
 
 ### Decode
 POST http://localhost:3000/decode
+Content-Type: application/json
+
+{
+  "encoded": "aGVsbG8gd29ybGQ="
+}
