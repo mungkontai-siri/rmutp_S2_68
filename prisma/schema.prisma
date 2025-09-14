@@ -21,4 +21,6 @@ model Profile {
   mobile   String  @unique @db.VarChar(32)
   cardId   String  @unique @db.VarChar(32)
   status   Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }
