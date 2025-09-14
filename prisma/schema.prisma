@@ -17,10 +17,8 @@ datasource db {
 model Profile {
   id       String  @id @default(uuid())
   username String  @unique
-  password String  @db.VarChar(72)
-  mobile   String  @unique @db.VarChar(32)
-  cardId   String  @unique @db.VarChar(32)
+  password String
+  mobile   String  @unique @db.VarChar(10)
+  cardId   String  @unique @db.VarChar(13)
   status   Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
 }
